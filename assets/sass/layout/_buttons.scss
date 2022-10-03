@@ -1,0 +1,68 @@
+// ----------  button
+// ------------------------------------------------------------------------------
+
+button,
+input[type='button'],
+input[type='submit'] {
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+
+a,
+button {
+	appearance: none;
+	outline: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.btn {
+	pointer-events: auto;
+    cursor: pointer;
+    background: #e7e7e7;
+    border: none;
+    padding: 20px 30px;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+	text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    color: #fff;
+
+	span {
+		position: relative;
+    	mix-blend-mode: difference;
+	}
+
+	&::before {
+		content: '';
+		background: #000;
+		position: absolute;
+		top: 0;
+		width: 120%;
+		left: -10%;
+		height: 100%;
+		transform: skew(30deg);
+		transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+	}
+
+	&:hover::before {
+		transform: translate3d(100%,0,0);
+
+	}
+} 
+
+.btn--nav {
+	margin-right: 30px;
+	padding: 10px 20px;
+}

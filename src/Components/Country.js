@@ -1,8 +1,9 @@
 export const Country = (country, onlyCountry)=>{
     const divCountry = document.createElement('div')
+    divCountry.className = 'list__item'
 
     const p = document.createElement('p')
-    p.textContent = `Name: ${country.name}`
+    p.textContent = `${country.name}`
 
     const nativeName = document.createElement('p')
     nativeName.textContent = `Native name: ${country.nativeName}`
@@ -19,6 +20,7 @@ export const Country = (country, onlyCountry)=>{
     const img = document.createElement('img')
     img.src = country.flag
     img.alt = `Flag of ${country.name}`
+    img.className = 'list__img'
 
     if (onlyCountry == true) {
         divCountry.append(p, nativeName, population, capital, levelDomain, img, document.createElement('hr'))

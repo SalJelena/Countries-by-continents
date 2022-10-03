@@ -7,20 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Почетна апликација</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div id="select"></div>
-        <div id="input"></div>
-        <input type="text" id="input-search" placeholder="search country" />
+    <header class="header">
+        <div class="wrap">
+            <div class="header__inner">
+                <div class="header__form-wrap header__input--select js-select"></div>
+                <div class="header__form-wrap">
+                    <label for="input-search" class="header__label"></label>
+                    <input type="text" id="input-search" class="header__input header__input--text js-input-search" placeholder="Search country..." />
+                </div>
+                <button class="btn__reset js-btn-reset">Reset</button>
+            </div>
         </div>
-        <select name="" id="sort">
-            <option value="capital">capital</option>
-            <option value="region">region</option>
-        </select>
     </header>
-    <main class="main"></main>
+    <main class="main">
+        <div class="wrap">
+            <div class="list js-list"></div>
+        </div>
+    </main>
 </body>
 
 </html>

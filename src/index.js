@@ -1,11 +1,12 @@
 import { Countries } from "./components/Countries.js"
 import { getAllCountries } from "./service.js"
-import { divSelect, main, inputFilter } from "./constants.js"
+import { divSelect, main, inputFilter, btnReset } from "./constants.js"
 
 let countries = []
 
 const Select = (regions) => {
     const select = document.createElement("select")
+    select.className = 'header__select'
 
     const defOpt = document.createElement("option")
     defOpt.value = "-1"
@@ -60,6 +61,12 @@ getAllCountries().then((res) => {
 	main.append(...Countries(countries, false))
 	generateSelect(countries)
 	onlyOneCountry(countries)
+
+    btnReset.addEventListener('click', () => {
+        main.innerHTML = ''
+        inputFilter.value = ''
+        main.append(...Countries(countries, false))
+    })
 })
     
 const onlyOneCountry = (arr) => {
@@ -70,7 +77,7 @@ const onlyOneCountry = (arr) => {
 	}
 }
  
-inputFilter.addEventListener('input', ()=>{
+inputFilter.addEventListener('input', () => {
 	main.innerHTML = ''
 	let filter = countries.filter(country => country.name.toLowerCase().includes(inputFilter.value.toLowerCase()))
 
